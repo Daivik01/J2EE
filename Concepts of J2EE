@@ -1,0 +1,50 @@
+    Java EE Application Model – This model describes a multi-tier architecture to implement services. The boundary defining what a service is is not defined clearly. In fact, a service is a logical concept and its concrete/real counterpart depends on the application implementing those concepts. For example, it is a server in the client/server model.
+    Java EE Server – It is the application server of the 3-tier paradigm, in the J2EE paradigm. It is composed of the web tier (serving JSP pages) and the business tier (managing enterprise Java beans).
+    Java EE Components– ‘Components’ mean independent software unit used in combination with other components to build an application.
+        Web Component – Part of the web tier generating pages or whatever is returned to user queries. Typically, these are Java Servlets, JavaServer Faces and Java Server Pages.
+        Applet – A small Java software application sent as part of a response to a user request, and which is meant to run in the user’s browser. Applets are in competition with Javascript.
+        Application Client – For example, a desktop application written in Java.
+        Enterprise Java Beans – See below.
+    Java EE Clients– This concepts regroups three other concepts:
+        Web Client (or thin client) – In (not so) old times, web pages returned to client requests used to contain code scripts which were executed on the application server before returning the result to clients. These pages were considered as EE clients. For example, one could query a list of employee and display different results depending on the querying user. Today, most developers do not include scripts in their web pages anymore. It is considered a bad practice. They tend to use MVC design principles, which prohibit scripts in those pages.
+        Applet
+        Application Client
+    Java EE Server Communication – This refers to the communication happening between thin clients and application clients with the application server. Typically, thin clients and applets communicate with the web tier, while application clients communicate with EJBs.
+
+    EJB (Enterprise Java Beans) – This is a logical concept which has nothing to do with traditional Java Beans. It basically tries to encapsulate business logic on the backend (i.e., server-side) of multi-tier applications. One key issue it was originally trying to solve is transactional integrity with the database. Warning: there has been several versions of EJB and version 3.0 is a clear breakaway from earlier versions.
+    JavaBean Component – It is a synonym of Java Bean mostly used in the JSP paradigm.
+    Java EE Container – This is where assembled Java EE components are deployed (i.e., on the application server). One defines web containers containing servlets and JSP pages, and EJB containers containing Enterprise Java Beans. One also defines application client containers for standalone applications and applet containers in browsers.
+    Deployment Descriptor – This is a XML file providing deployment information for packaged applications. See here for more information.
+    SOAP (Simple Object Access Protocol) – It is a protocol to exchange messages across services offered on the web. The messages are structured according to XML and can be exchanged via many transportation layers, but most often HTTP. SOAP competes with JSON and REST-like services.
+    WSLD (Web Service Description Language) – It describes network services using XML documents (name, location, communication mode).
+    UDDI (Universal Description, Discovery and Integration) an ebXML – Lets on publish information about products and service online.
+    Java Servlet – A servlet is a Java class processing incoming user HTTP requests and returning a result.
+    JSP (JavaServer Page) – A text based HTML document (i.e., a kind of template) processed to produce static content. It can contain snippets of script code which is executed to render the final static documents.
+    JSTL (JavaServer Page Standard Tag Library) – A set of standard tags used in JSP to mimic scripting code functionalities. For example, looping over a list of clients to display their corresponding information. Nowadays, such tags have replaced scripting code in JSP. They are mostly used to generated to populate pages with information to display to users.
+    JSF (Java Server Face) – These are JavaServer Page including JavaServer Face tags (which are similar to JSTL tags). In addition, JSF allows the definition of navigation models between pages (something similar to Spring web flow). It also includes Facelets.
+    Facelets – Facelets is the MVC view part of JSF. It basically converts templates into HTML documents using provided data (for example with a list of clients). It can also extract parts of generated documents (for example a HTML body) and include it in another template. This is equivalent to what Sitemesh does too.
+    The Java API for XML-based Web Services (JAX-WS) – A mean to define web services using XML communication.
+    The Java API for XML Binding (JAXB) – A way to convert (typically) Java beans into XML documents back and forth. See here for more details.
+    JTA (Java Transaction API) – Mean to delimit database transactions with autocommit and rollback.
+    JMS (Java Message Service) – An API allowing exchanges of messages reliably and asynchronously between application and services over the internet. ActiveMQ implements JMS.
+    JavaMail API – A mean to send emails from an application.
+    JAXP (Java API for XML Processing) – Enables the processing of XML documents.
+    JAXR (Java API for XML Registries) – An API enabling access to registries containing metadata. It is based on XML.
+    JDBC (Java Database Connectivity) – This API lets an application perform SQL transaction directly with databases.
+    JCA (Java EE Connector Architecture) – It helps applications obtain connection to information systems (often database). See this post for more details.
+    JPA (Java Persistence API) – It is an ORM (Object/relational mapping) definition to help store objects in databases. See here for examples.
+    JNDI (Java Naming and Directory Interface) – A mean to store and retrieve resources or access to resources using their name. See this post for more details.
+    JAAS (Java Authentication and Authorization Service) – A mean to authentication and control access to services.
+
+J2EE 6 Additional Concepts
+
+With J2EE 6, a lot of the configuration can be performed with annotations in the Java source code.
+
+    JAX-RS – API to define REST-like services.
+    Managed Beans – A java object where injections can be performed. In Spring, these would be objects with properties annotated with @Autowired (for example).
+    CDI (Contexts and Dependency Injection) -The mechanism implementing and executing dependencies injection. In Spring, one would mention application context, inversion of control (IoC) and dependency injection (DI).
+    Bean Validation – A mean to make sure a Java Beans state is valid according to predefined rules.
+    JACC (Java Authorization Contract for Containers) – Specifies relationships and transactions between EE containers and authorization providers.
+    JASPIC (Java Authentication Service Provider Interface) – This is the complementary authentication SPI (i.e., Service API) to JACC. It defines how applications can access traditional authentication services.
+
+Overall, Spring and J2EE slowly converge in the same direction.
